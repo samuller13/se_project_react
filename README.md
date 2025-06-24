@@ -1,4 +1,4 @@
-# What to wear
+# WTWR
 
 This is a full-stack web application called "WTWR" ("What to wear"). It will read weather data from a Weather API and then recommend suitable clothing to the user based on that data.
 
@@ -19,5 +19,4 @@ This is a full-stack web application called "WTWR" ("What to wear"). It will rea
 
 This webpage is deployed to GitHub Pages
 
-[Deployment Link]()
-[Link to the Site]()
+[Deployment Link](https://github.com/samuller13/se_project_react)
