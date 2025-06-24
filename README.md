@@ -19,4 +19,4 @@ This is a full-stack web application called "WTWR" ("What to wear"). It will rea
 
 This webpage is deployed to GitHub Pages
 
-[Deployment Link](https://github.com/samuller13/se_project_react)
+[Deployment Link](https://samuller13.github.io/se_project_react)
