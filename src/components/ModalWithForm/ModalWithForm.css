@@ -87,6 +87,7 @@
   height: 16px;
   width: 16px;
   margin-right: 8px;
+  accent-color: black;
 }
 
 .modal__label_type_radio {
@@ -104,4 +105,8 @@
   border-radius: 4px;
   padding: 8px 16px;
   width: 124px;
+}
+
+.modal__submit:hover {
+  background-color: #00000099;
 }
