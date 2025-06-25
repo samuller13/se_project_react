@@ -41,6 +41,8 @@ function App() {
   }, []);
 
   useEffect(() => {
+    if (!activeModal) return;
+
     const handleKeyPress = (event) => {
       if (event.key === "Escape") {
         closeActiveModal();
@@ -51,7 +53,7 @@ function App() {
     return () => {
       document.removeEventListener("keydown", handleKeyPress);
     };
-  }, []);
+  }, [activeModal]);
 
   return (
     <div className="page">
@@ -92,7 +94,13 @@ function App() {
               htmlFor="hot"
               className="modal__label modal__label_type_radio"
             >
-              <input id="hot" type="radio" className="modal__radio-input" /> Hot
+              <input
+                name="button"
+                id="hot"
+                type="radio"
+                className="modal__radio-input"
+              />{" "}
+              Hot
             </label>
           </div>
 
@@ -101,7 +109,12 @@ function App() {
               htmlFor="warm"
               className="modal__label modal__label_type_radio"
             >
-              <input id="warm" type="radio" className="modal__radio-input" />{" "}
+              <input
+                name="button"
+                id="warm"
+                type="radio"
+                className="modal__radio-input"
+              />{" "}
               Warm
             </label>
           </div>
@@ -111,7 +124,12 @@ function App() {
               htmlFor="cold"
               className="modal__label modal__label_type_radio"
             >
-              <input id="cold" type="radio" className="modal__radio-input" />{" "}
+              <input
+                name="button"
+                id="cold"
+                type="radio"
+                className="modal__radio-input"
+              />{" "}
               Cold
             </label>
           </div>

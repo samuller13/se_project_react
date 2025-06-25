@@ -5,17 +5,14 @@ function ModalWithForm({ children, buttonText, title, activeModal, onClose }) {
     <div
       className={`modal ${activeModal === "add-garment" && "modal_opened"}`}
       onClick={onClose}
+      isOpen={activeModal === "add-garment"}
     >
       <div
         className="modal__content"
         onClick={(event) => event.stopPropagation()}
       >
         <h2 className="modal__title">{title}</h2>
-        <button
-          onClick={onClose}
-          type="button"
-          className="modal__close"
-        ></button>
+        <button onClick={onClose} type="button" className="modal__close" />
         <form className="modal__form">
           {children}
           <button type="submit" className="modal__submit">
