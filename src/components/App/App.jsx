@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 import "./App.css";
-import { coordinates, APIkey } from "../../utils/constants";
+import { coordinates, apiKey } from "../../utils/constants";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
@@ -56,17 +56,17 @@ function App() {
   };
 
   const handleCardDelete = (_id) => {
-    const newclothingItems = clothingItems.filter((item) => item._id !== _id);
+    const newClothingItems = clothingItems.filter((item) => item._id !== _id);
     deleteItems(_id)
       .then((_id) => {
         closeActiveModal();
-        setClothingItems(newclothingItems);
+        setClothingItems(newClothingItems);
       })
       .catch(console.error);
   };
 
   useEffect(() => {
-    getWeather(coordinates, APIkey)
+    getWeather(coordinates, apiKey)
       .then((data) => {
         const filterData = filterWeatherData(data);
         setWeatherData(filterData);

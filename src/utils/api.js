@@ -6,7 +6,7 @@ function getItems() {
   });
 }
 
-function addItems({ _id, name, weather, imageUrl }) {
+function addItem({ _id, name, weather, imageUrl }) {
   return fetch(`${baseUrl}/items`, {
     method: "POST",
     headers: {
@@ -18,7 +18,7 @@ function addItems({ _id, name, weather, imageUrl }) {
   });
 }
 
-function deleteItems(_id) {
+function deleteItem(_id) {
   return fetch(`${baseUrl}/items/${_id}`, {
     method: "DELETE",
   }).then((res) => {
@@ -26,4 +26,4 @@ function deleteItems(_id) {
   });
 }
 
-export { getItems, addItems, deleteItems };
+export { getItems, addItem, deleteItem };
