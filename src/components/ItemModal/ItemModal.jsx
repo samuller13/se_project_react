@@ -1,6 +1,6 @@
 import "./ItemModal.css";
 
-function ItemModal({ activeModal, onClose, card }) {
+function ItemModal({ activeModal, onClose, card, onDelete }) {
   return (
     <div
       className={`modal ${activeModal === "preview" && "modal_opened"}`}
@@ -15,9 +15,19 @@ function ItemModal({ activeModal, onClose, card }) {
           type="button"
           className="modal__close"
         ></button>
-        <img src={card.link} alt={card.name} className="modal__image" />
+        <img src={card.imageUrl} alt={card.name} className="modal__image" />
+
         <div className="modal__footer">
-          <h2 className="modal__caption">{card.name}</h2>
+          <div className="modal__footer_content">
+            <h2 className="modal__caption">{card.name} </h2>
+            <button
+              onClick={() => onDelete(card._id)}
+              type="button"
+              className="modal__delete"
+            >
+              Delete item
+            </button>
+          </div>
           <p className="modal__weather">Weather: {card.weather}</p>
         </div>
       </div>

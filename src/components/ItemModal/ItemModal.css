@@ -14,11 +14,20 @@
   object-fit: cover;
 }
 
+.modal__close {
+  color: #ffffff;
+}
+
 .modal__footer {
   display: flex;
   flex-direction: column;
-  margin-left: 32px;
-  margin-bottom: 32px;
+  margin: 0 32px 32px 32px;
+}
+
+.modal__footer_content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .modal__caption {
@@ -30,13 +39,15 @@
   line-height: 1.2;
 }
 
+.modal__delete {
+  color: #ff4d00;
+  background-color: transparent;
+  border: none;
+}
+
 .modal__weather {
   margin: 0;
   font-size: 20px;
   font-weight: 700;
   line-height: 1.2;
-}
-
-.modal__close {
-  color: #ffffff;
 }
