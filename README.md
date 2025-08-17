@@ -2,6 +2,9 @@
 
 This is a full-stack web application called "WTWR" ("What to wear"). It will read weather data from a Weather API and then recommend suitable clothing to the user based on that data.
 
+![home](src/assets/homescreenshot.png)
+![profile](src/assets/profilescreenshot.png)
+
 ## Tech Stack
 
 - HTML

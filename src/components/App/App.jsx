@@ -12,7 +12,7 @@ import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnit
 import AddItemModal from "../AddItemModal/AddItemModal";
 import { BrowserRouter } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
-import { addItems, deleteItems, getItems } from "../../utils/api";
+import { addItem, deleteItem, getItems } from "../../utils/api";
 
 function App() {
   const [weatherData, setWeatherData] = useState({
@@ -47,7 +47,7 @@ function App() {
 
   const handleAddItemModalSubmit = ({ name, imageUrl, weather }) => {
     const newId = Math.max(...clothingItems.map((item) => item._id)) + 1;
-    addItems({ name, imageUrl, weather, _id: newId })
+    addItem({ name, imageUrl, weather, _id: newId })
       .then((data) => {
         closeActiveModal();
         setClothingItems([data, ...clothingItems]);
@@ -57,7 +57,7 @@ function App() {
 
   const handleCardDelete = (_id) => {
     const newClothingItems = clothingItems.filter((item) => item._id !== _id);
-    deleteItems(_id)
+    deleteItem(_id)
       .then((_id) => {
         closeActiveModal();
         setClothingItems(newClothingItems);
@@ -77,6 +77,7 @@ function App() {
   useEffect(() => {
     getItems()
       .then((data) => {
+        data.sort((a, b) => b._id - a._id);
         setClothingItems(data);
       })
       .catch(console.error);
