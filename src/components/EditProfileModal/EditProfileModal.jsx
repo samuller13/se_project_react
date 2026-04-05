@@ -1,25 +1,29 @@
 import "./EditProfileModal.css";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useContext } from "react";
+import useForm from "../../Hooks/useForm";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 
-const EditProfileModal = ({ isOpen, onClose, onSubmit }) => {
+export default function EditProfileModal({ isOpen, onClose, onSubmit }) {
+  const { values, handleChange, setValues } = useForm({
+    name: "",
+    avatar: "",
+  });
   const currentUser = useContext(CurrentUserContext);
-  const [name, setName] = useState(currentUser?.name || "");
-  const [avatar, setAvatar] = useState(currentUser?.avatar || "");
+  useEffect(() => {
+    if (currentUser) {
+      setValues({
+        name: currentUser.name || "",
+        avatar: currentUser.avatar || "",
+      });
+    }
+  }, [currentUser, isOpen]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit({ name: name, avatar: avatar });
+    onSubmit(values);
   };
-
-  useEffect(() => {
-    if (currentUser) {
-      setName(currentUser.name || "");
-      setAvatar(currentUser.avatar || "");
-    }
-  }, [currentUser, isOpen]);
 
   return (
     <ModalWithForm
@@ -33,28 +37,28 @@ const EditProfileModal = ({ isOpen, onClose, onSubmit }) => {
         Name *
         <input
           id="name"
+          name="name"
           className="modal__input modal__input_type_card-name"
           placeholder=""
           required
           type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+          value={values.name}
+          onChange={handleChange}
         />
       </label>
       <label htmlFor="avatar" className="modal__label">
         Avatar *
         <input
           id="avatar"
+          name="avatar"
           className="modal__input modal__input_type_url"
           placeholder=""
           required
           type="url"
-          value={avatar}
-          onChange={(e) => setAvatar(e.target.value)}
+          value={values.avatar}
+          onChange={handleChange}
         />
       </label>
     </ModalWithForm>
   );
-};
-
-export default EditProfileModal;
+}

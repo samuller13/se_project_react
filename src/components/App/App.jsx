@@ -67,9 +67,15 @@ function App() {
         return authorize(email, password);
       })
       .then((res) => {
-        localStorage.setItem("jwt", res.token);
-        setIsLoggedIn(true);
-        setCurrentUser(res.user);
+        if (res.token) {
+          localStorage.setItem("jwt", res.token);
+          setIsLoggedIn(true);
+          return checkToken(res.token);
+        }
+      })
+      .then((userData) => {
+        setCurrentUser(userData);
+        closeActiveModal();
       })
       .catch((err) => {
         console.error("Registration failed:", err);
