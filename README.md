@@ -26,4 +26,4 @@ This webpage is deployed to GitHub Pages
 
 **Backend Repository**
 
-[Link to Backend Repository](git@github.com:samuller13/se_project_express.git)
+[Link to Backend Repository](https://github.com/samuller13/se_project_express.git)
