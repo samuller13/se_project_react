@@ -16,6 +16,7 @@
 
 .modal__close {
   color: #ffffff;
+  cursor: pointer;
 }
 
 .modal__footer {
@@ -41,8 +42,11 @@
 
 .modal__delete {
   color: #ff4d00;
+  font-size: 20px;
+  font-weight: 700;
   background-color: transparent;
   border: none;
+  cursor: pointer;
 }
 
 .modal__weather {
@@ -50,4 +54,45 @@
   font-size: 20px;
   font-weight: 700;
   line-height: 1.2;
+}
+
+.modal__content_type_confirmation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 280px;
+  width: 670px;
+}
+
+.modal__confirmation-text {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.modal__button_type_confirm {
+  color: #ff4d00;
+  font-size: 20px;
+  font-weight: 700;
+  border: none;
+  background: none;
+  margin-top: 40px;
+  cursor: pointer;
+}
+
+.modal__button_type_cancel {
+  font-size: 20px;
+  font-weight: 700;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.modal__confirmation-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }

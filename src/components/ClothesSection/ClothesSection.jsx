@@ -1,8 +1,20 @@
+import { useContext } from "react";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
 import ItemCard from "../ItemCard/ItemCard";
 import "./ClothesSection.css";
-import AddItemModal from "../AddItemModal/AddItemModal";
 
-function ClothesSection({ onCardClick, onAddClick, clothingItems }) {
+function ClothesSection({
+  onCardClick,
+  onAddClick,
+  clothingItems,
+  onCardLike,
+}) {
+  const currentUser = useContext(CurrentUserContext);
+
+  const userClothingItems = clothingItems.filter(
+    (item) => item.owner === currentUser._id,
+  );
+
   return (
     <div className="clothes-section">
       <div className="clothes-section__title">
@@ -16,13 +28,14 @@ function ClothesSection({ onCardClick, onAddClick, clothingItems }) {
         </button>
       </div>
       <ul className="clothes-section__items">
-        {clothingItems.map((item) => {
+        {userClothingItems.map((item) => {
           return (
             <ItemCard
               key={item._id}
               item={item}
               onCardClick={onCardClick}
               onAddClick={onAddClick}
+              onCardLike={onCardLike}
             />
           );
         })}

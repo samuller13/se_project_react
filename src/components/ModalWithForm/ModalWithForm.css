@@ -101,15 +101,32 @@
   color: #000000;
 }
 
+.modal__footer-buttons {
+  display: flex;
+  gap: 12px;
+}
+
 .modal__submit {
   background-color: #0000004d;
   color: #ffffff;
   border: none;
   border-radius: 4px;
   padding: 8px 16px;
-  width: 124px;
+  width: auto;
+  white-space: nowrap;
+  display: inline-block;
+  align-self: flex-start;
+  cursor: pointer;
 }
 
 .modal__submit:hover {
   background-color: #00000099;
+}
+
+.modal__alternative-link {
+  border: none;
+  background: none;
+  color: #00000080;
+  cursor: pointer;
+  font-size: 16px;
 }

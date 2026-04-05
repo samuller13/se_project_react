@@ -27,6 +27,7 @@
   line-height: 100%;
   opacity: 60%;
   background-color: transparent;
+  cursor: pointer;
 }
 
 .card__image {
