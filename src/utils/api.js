@@ -18,7 +18,7 @@ function addItem({ _id, name, weather, imageUrl }, token) {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
     },
-    body: JSON.stringify({ _id, name, weather, imageUrl }),
+    body: JSON.stringify({ name, weather, imageUrl }),
   }).then(handleFetchResponse);
 }
 

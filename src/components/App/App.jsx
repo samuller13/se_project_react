@@ -102,8 +102,8 @@ function App() {
 
   const handleAddItemModalSubmit = ({ name, imageUrl, weather }) => {
     const token = localStorage.getItem("jwt");
-    const newId = Math.max(...clothingItems.map((item) => item._id)) + 1;
-    addItem({ name, imageUrl, weather, _id: newId }, token)
+
+    addItem({ name, imageUrl, weather }, token)
       .then((data) => {
         closeActiveModal();
         setClothingItems([data, ...clothingItems]);
@@ -191,7 +191,6 @@ function App() {
   useEffect(() => {
     getItems()
       .then((data) => {
-        data.sort((a, b) => b._id - a._id);
         setClothingItems(data);
       })
       .catch(console.error);

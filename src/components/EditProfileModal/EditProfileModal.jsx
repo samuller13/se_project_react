@@ -33,10 +33,10 @@ export default function EditProfileModal({ isOpen, onClose, onSubmit }) {
       onClose={onClose}
       onSubmit={handleSubmit}
     >
-      <label htmlFor="name" className="modal__label">
+      <label htmlFor="edit-name" className="modal__label">
         Name *
         <input
-          id="name"
+          id="edit-name"
           name="name"
           className="modal__input modal__input_type_card-name"
           placeholder=""
@@ -46,10 +46,10 @@ export default function EditProfileModal({ isOpen, onClose, onSubmit }) {
           onChange={handleChange}
         />
       </label>
-      <label htmlFor="avatar" className="modal__label">
+      <label htmlFor="edit-avatar" className="modal__label">
         Avatar *
         <input
-          id="avatar"
+          id="edit-avatar"
           name="avatar"
           className="modal__input modal__input_type_url"
           placeholder=""

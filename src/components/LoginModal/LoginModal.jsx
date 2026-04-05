@@ -42,10 +42,10 @@ export default function LoginModal({
         onClose={onClose}
         onSubmit={handleSubmit}
       >
-        <label htmlFor="email" className="modal__label">
+        <label htmlFor="login-email" className="modal__label">
           Email
           <input
-            id="email"
+            id="login-email"
             className="modal__input modal__input_type_email"
             placeholder="Email"
             required
@@ -55,10 +55,10 @@ export default function LoginModal({
             onChange={handleChange}
           />
         </label>
-        <label htmlFor="password" className="modal__label">
+        <label htmlFor="login-password" className="modal__label">
           Password
           <input
-            id="password"
+            id="login-password"
             className="modal__input modal__input_type_password"
             placeholder="Password"
             required

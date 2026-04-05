@@ -31,12 +31,12 @@ export default function AddItemModal({
       onClose={onClose}
       onSubmit={handleSubmit}
     >
-      <label htmlFor="name" className="modal__label">
+      <label htmlFor="add-item-name" className="modal__label">
         Name{" "}
         <input
           type="text"
           className="modal__input modal__input_type_card-name"
-          id="name"
+          id="add-item-name"
           placeholder="Name"
           minLength="1"
           maxLength="30"

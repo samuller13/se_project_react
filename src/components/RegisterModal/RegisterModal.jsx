@@ -41,12 +41,12 @@ export default function RegisterModal({
       onClose={onClose}
       onSubmit={handleSubmit}
     >
-      <label htmlFor="email" className="modal__label">
+      <label htmlFor="register-email" className="modal__label">
         Email*{" "}
         <input
           type="email"
           className="modal__input modal__input_type_email"
-          id="email"
+          id="register-email"
           placeholder="Email"
           required
           minLength="1"
@@ -56,25 +56,25 @@ export default function RegisterModal({
           name="email"
         />
       </label>
-      <label htmlFor="password" className="modal__label">
+      <label htmlFor="register-password" className="modal__label">
         Password*{" "}
         <input
           type="password"
           name="password"
           className="modal__input modal__input_type_password"
-          id="password"
+          id="register-password"
           placeholder="Password"
           required
           onChange={handleChange}
           value={values.password}
         />
       </label>
-      <label htmlFor="name" className="modal__label">
+      <label htmlFor="register-name" className="modal__label">
         Name*{" "}
         <input
           type="text"
           className="modal__input modal__input_type_card-name"
-          id="name"
+          id="register-name"
           placeholder="Name"
           required
           minLength="1"
@@ -84,13 +84,14 @@ export default function RegisterModal({
           name="name"
         />
       </label>
-      <label htmlFor="avatar" className="modal__label">
+      <label htmlFor="register-avatar" className="modal__label">
         Avatar URL*{" "}
         <input
           type="url"
+          alt="User avatar"
           name="avatar"
           className="modal__input modal__input_type_url"
-          id="avatar"
+          id="register-avatar"
           placeholder="Avatar URL"
           required
           onChange={handleChange}

@@ -22,7 +22,7 @@ function ItemModal({ activeModal, onClose, card, onDelete }) {
   return (
     <>
       <div
-        className={`modal ${activeModal === "preview" && "modal_opened"}`}
+        className={`modal ${activeModal === "preview" ? "modal_opened" : ""}`}
         onClick={onClose}
       >
         <div
